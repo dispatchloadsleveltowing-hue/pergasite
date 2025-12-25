@@ -19,18 +19,45 @@
         }
         
         /* Age Gate */
+        /* Age Gate with Video Background */
         #ageGate {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/53bd417ff2a534234adac0941305d4010b5385d7/img/agebackground.jpeg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 10000;
+            overflow: hidden;
+        }
+        
+        /* Video Background */
+        #bgVideo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        /* Dark overlay */
+        #ageGate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8));
             backdrop-filter: blur(10px);
+            z-index: 1;;
         }
         
         .age-gate-content {
@@ -544,9 +571,11 @@
 
     <!-- Age Verification Gate -->
     <div id="ageGate">
-        <div class="age-gate-content">
-            <div class="age-gate-logo">
-                <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/perga-logo.jpeg.png?raw=true" alt="PERGA">
+        <video autoplay muted loop playsinline id="bgVideo">
+            <source src="videos/tropical-beach.mp" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+            <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/53bd417ff2a534234adac0941305d4010b5385d7/img/agebackground.jpeg" alt="Background">
+        </video>
             </div>
             <h2>Please confirm your age</h2>
             <p>You must be of legal drinking age 21 or older to enter this site.</p>
