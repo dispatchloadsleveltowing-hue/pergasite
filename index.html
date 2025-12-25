@@ -18,7 +18,7 @@
             overflow-x: hidden;
         }
         
-        /* Age Gate */
+        /* Age Gate with Video Background */
         #ageGate {
             position: fixed;
             top: 0;
@@ -31,19 +31,9 @@
             z-index: 10000;
             overflow: hidden;
         }
-
-        #ageGate::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1;
-        }
         
-        #ageGateVideo {
+        /* Video Background */
+        #bgVideo {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -53,14 +43,28 @@
             height: auto;
             transform: translate(-50%, -50%);
             object-fit: cover;
-            z-index: 0;
-
-        }    
+            z-index: 1;
+        }
+        
+        /* Dark overlay */
+        #ageGate::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+            z-index: 2;
+            pointer-events: none;
+        }
         
         .age-gate-content {
             text-align: center;
             padding: 3rem;
             max-width: 600px;
+            position: relative;
+            z-index: 3;
         }
         
         .age-gate-logo {
@@ -74,19 +78,24 @@
             max-width: 300px;
             height: auto;
             display: block;
-            opacity: 0.95;  /* <-- CHANGE THIS NUMBER */
+            opacity: 1;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8));
         }
         
         .age-gate-content h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             font-weight: 600;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
         
         .age-gate-content p {
             font-size: 1rem;
-            opacity: 0.8;
+            opacity: 0.9;
             margin-bottom: 2rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
 
         /* DOB Input Fields */
@@ -110,14 +119,15 @@
             font-size: 1.5rem;
             border: none;
             border-bottom: 3px solid #D4AF37;
-            background: transparent;
+            background: rgba(0, 0, 0, 0.4);
             color: #fff;
             outline: none;
             font-weight: 600;
+            backdrop-filter: blur(5px);
         }
         
         .dob-field input::placeholder {
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.4);
         }
         
         .dob-field label {
@@ -125,6 +135,7 @@
             letter-spacing: 0.12em;
             margin-top: 0.75rem;
             color: #D4AF37;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
         }
         
         /* Terms checkbox */
@@ -134,12 +145,17 @@
             font-size: 0.9rem;
             line-height: 1.5;
             text-align: left;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
         }
         
         .age-terms label {
             display: flex;
             align-items: start;
             gap: 0.75rem;
+            color: #fff;
         }
         
         .age-terms input[type="checkbox"] {
@@ -155,25 +171,19 @@
         }
         
         /* Buttons */
-        .age-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
         .age-btn {
             padding: 1.2rem 3rem;
             font-size: 1.1rem;
             font-weight: 600;
             border: 2px solid #D4AF37;
-            background: transparent;
+            background: rgba(0, 0, 0, 0.6);
             color: #D4AF37;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             margin-top: 1rem;
+            backdrop-filter: blur(5px);
         }
         
         .age-btn:hover {
@@ -188,6 +198,10 @@
             margin-top: 1rem;
             display: none;
             font-size: 0.9rem;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
         }
         
         /* Hidden State */
@@ -335,8 +349,11 @@
         }
         
         .product-icon {
-            font-size: 5rem;
-            margin-bottom: 1.5rem;
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem;
+            display: block;
         }
         
         .product-card h3 {
@@ -442,7 +459,7 @@
             
             .age-terms {
                 font-size: 0.85rem;
-                padding: 0 0.5rem;
+                padding: 0.75rem;
             }
             
             .age-btn {
@@ -513,7 +530,8 @@
             }
             
             .product-icon {
-                font-size: 4rem;
+                width: 100px;
+                height: 100px;
             }
             
             .product-card h3 {
@@ -566,15 +584,16 @@
 </head>
 <body>
 
-    <!-- Age Verification Gate -->
+    <!-- Age Verification Gate with Video Background -->
     <div id="ageGate">
-        <video id="ageGateVideo" autoplay loop muted playsinline>
-            <source src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/main/img/Untitleddesign1-ezgif.com-resize-video%20(1).mp4" type="video/mp4">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline id="bgVideo">
+            <source src="https://github.com/dispatchloadsleveltowing-hue/pergasite/raw/main/img/Untitleddesign1-ezgif.com-resize-video%20(1).mp4" type="video/mp4">
         </video>
+        
         <div class="age-gate-content">
             <div class="age-gate-logo">
                 <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/perga-logo.jpeg.png?raw=true" alt="PERGA">
-            </div>
             </div>
             <h2>Please confirm your age</h2>
             <p>You must be of legal drinking age 21 or older to enter this site.</p>
@@ -649,32 +668,28 @@
             <div class="products-grid">
                 
                 <div class="product-card">
-                    <div class="product-card">
-                      <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Perga%200001.ico" alt="PERGA Drink" class="product-icon">            
+                    <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Perga%200001.ico" alt="PERGA Beer" class="product-icon">            
                     <h3>PERGA Beer 5.2% ALC/VOL </h3>
                     <p>Refreshing taste. Imported beer.</p>
                     <p><strong>Best served ice cold</strong></p>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-card">
-                      <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Cola%20001.ico" alt="PERGA Drink" class="product-icon">
+                    <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Cola%20001.ico" alt="PERGA Cola" class="product-icon">
                     <h3>PERGA Cola</h3>
                     <p>Latin-style cola. Bold flavor, smooth bubbles, and refreshing taste.</p>
                     <p><strong>Perfect for everyday enjoyment.</strong></p>
                 </div>
                 
                 <div class="product-card">
-                    <div class="product-card">
-                      <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Limon%20001.ico" alt="PERGA Drink" class="product-icon">
+                    <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Limon%20001.ico" alt="PERGA Lemon" class="product-icon">
                     <h3>PERGA Lemon</h3>
                     <p>crisp refreshing soda with bright citrus flavor. Unforgettable taste.</p>
                     <p><strong>Smooth Carbonation</strong></p>
                 </div>
                 
                 <div class="product-card beer-product" id="beerProduct" style="display:none;">
-                    <div class="product-card">
-                      <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Naranja%20001.ico" alt="PERGA Drink" class="product-icon">
+                    <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Naranja%20001.ico" alt="PERGA Orange" class="product-icon">
                     <h3>PERGA Orango</h3>
                     <p>Bring vibrant orangr flavor with a crisp.</p>
                     <p><strong>Refreshing bubbles every sip</strong></p>
