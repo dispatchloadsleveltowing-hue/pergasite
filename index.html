@@ -16,7 +16,6 @@
             background: #000;
             color: #fff;
             overflow-x: hidden;
-            overflow-y: auto;
         }
         
         /* Age Gate with Video Background */
@@ -25,14 +24,13 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100dvh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 10000;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
-            padding: 2rem 0;
         }
         
         /* Video Background */
@@ -53,8 +51,11 @@
         #ageGate::after {
             content: '';
             position: absolute;
-            inset: 0;
-            background:  transparent; /* light, even overlay */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
             z-index: 2;
             pointer-events: none;
         }
@@ -419,6 +420,10 @@
         /* Responsive */
         @media (max-width: 768px) {
             /* Age Gate Mobile */
+            #ageGate {
+                padding: 2rem 0;
+            }
+            
             .age-gate-content {
                 padding: 2rem 1.5rem;
                 max-width: 100%;
@@ -600,21 +605,19 @@
 
             <!-- DOB inputs -->
             <div class="dob-row">
-       <div class="dob-field">
-         <input id="mm" type="text" inputmode="numeric" maxlength="2" placeholder="MM">
-         <label>MONTH</label>
-       </div>
-
-       <div class="dob-field">
-         <input id="dd" type="text" inputmode="numeric" maxlength="2" placeholder="DD">
-         <label>DAY</label>
-       </div>
-
-       <div class="dob-field">
-         <input id="yyyy" type="text" inputmode="numeric" maxlength="4" placeholder="YYYY">
-         <label>YEAR</label>
-       </div>
-    </div> 
+                <div class="dob-field">
+                    <input id="mm" type="text" inputmode="numeric" maxlength="2" placeholder="MM">
+                    <label>MONTH</label>
+                </div>
+                <div class="dob-field">
+                    <input id="dd" type="text" inputmode="numeric" maxlength="2" placeholder="DD">
+                    <label>DAY</label>
+                </div>
+                <div class="dob-field">
+                    <input id="yyyy" type="text" inputmode="numeric" maxlength="4" placeholder="YYYY">
+                    <label>YEAR</label>
+                </div>
+            </div>
 
             <!-- Terms checkbox -->
             <div class="age-terms">
@@ -776,11 +779,11 @@
             }
         }
 
-        // Button handler
+        // Button handler - FIXED INPUT IDs
         document.getElementById('enterBtn').addEventListener('click', function () {
-            const month = parseInt(document.getElementById('dobMonth').value, 10);
-            const day = parseInt(document.getElementById('dobDay').value, 10);
-            const year = parseInt(document.getElementById('dobYear').value, 10);
+            const month = parseInt(document.getElementById('mm').value, 10);
+            const day = parseInt(document.getElementById('dd').value, 10);
+            const year = parseInt(document.getElementById('yyyy').value, 10);
             const agree = document.getElementById('ageAgree').checked;
             const errorEl = document.getElementById('ageError');
 
