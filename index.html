@@ -212,41 +212,54 @@
         
         /* Navigation */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 2rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-        }
-        
-        .nav-logo {
-            height: 60px;
-            width: auto;
-            display: block;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.9rem;
-        }
-        
-        .nav-links a:hover {
-            color: #D4AF37;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: transparent;  /* Fully transparent */
+    transition: all 0.4s ease;
+}
+
+nav.scrolled {
+    padding: 1rem 4rem;
+    background: rgba(0, 0, 0, 0.0);  /* Solid dark background when scrolled */
+}
+
+.nav-logo {
+    height: 260px;
+    width: auto;
+    display: block;
+    transition: all 0.4s ease;
+}
+
+nav.scrolled .nav-logo {
+    height: 120px;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;  /* Horizontal layout */
+    gap: 3rem;
+    list-style: none;
+    align-items: center;  /* Vertically center the links */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    color: #D4AF37;
         }
         
         /* Hero Section */
@@ -363,16 +376,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
+            background-size: contain;  /* Changed from 'cover' to 'contain' */
+            background-position: center top;  /* Align with the can position */
+            background-repeat: no-repeat;  /* Don't repeat the image */
             opacity: 0.80;
             z-index: 0;
             transition: opacity 0.3s, transform 0.3s;
         }
         
         .product-card:hover::before {
-            opacity: 0.15;
-            transform: scale(1.05);
+            opacity: 0.20;  /* More subtle fade */
+            transform: scale(1.0);  /* No scaling, just fade */
         }
         
         .product-card.beer::before {
@@ -404,8 +418,8 @@
         }
         
         .product-icon {
-            width: 120px;
-            height: 120px;
+            width: 350px;        /* increased from 120px */
+            height: 350px;       /* increased from 120px */
             object-fit: contain;
             margin: 0 auto 1.5rem;
             display: block;
@@ -1166,11 +1180,13 @@ Director of the importing and exporting company VMC Imporsur LLC  Founder and CE
                 <a href="https://www.tiktok.com/@pergaofficial" target="_blank" aria-label="tiktok">
                     <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/tiktok-logo-tiktok-social-media-icon-free-png.png?raw=true" alt="tiktok">
             </div>
-            <div class="logo" style="margin-bottom: 2rem;">PERGA</div>
-            <p style="font-size: 0.9rem; opacity: 0.7; margin-bottom: 1rem;">Refresh Responsibly</p>
+            <div class="age-gate-logo">
+                <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/perga-logo.jpeg.png?raw=true" alt="PERGA">
+            </div>
+            <p style="font-size: 0.90rem; opacity: 0.90; margin-bottom: 1rem;">Refresh Responsibly</p>
             <div class="legal">
                 <p>© 2025 PERGA. All rights reserved.</p>
-                <p style="margin-top: 1rem;">MUST BE 21+ TO PURCHASE ALCOHOL</p>
+                <p style="margin-top: 0rem;">MUST BE 21+ TO PURCHASE ALCOHOL</p>
                 <p>Drink Responsibly</p>
             </div>
         </div>
@@ -1243,7 +1259,17 @@ Director of the importing and exporting company VMC Imporsur LLC  Founder and CE
                 applyAccess(false);
             }
         };
-        
+
+        // Logo shrink on scroll
+window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    
+    if (window.scrollY > 100) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
+});
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
