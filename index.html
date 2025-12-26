@@ -351,7 +351,7 @@
             background-color: rgba(0, 0, 0, 0);
             padding: 2.5rem;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.4s;
             border: 1px solid transparent;
         }
 
@@ -365,7 +365,7 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            opacity: 0.08;
+            opacity: 0.80;
             z-index: 0;
             transition: opacity 0.3s, transform 0.3s;
         }
@@ -400,7 +400,7 @@
         .product-card:hover {
             transform: translateY(-10px);
             border-color: #D4AF37;
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0.2, 0, 0.2);
         }
         
         .product-icon {
@@ -429,11 +429,30 @@
             padding: 4rem;
             text-align: center;
             border-top: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Footer Video Background */
+        footer #footerVideo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.90;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         .social-links {
@@ -784,6 +803,11 @@
 
     <!-- Footer -->
     <footer id="mainFooter" class="hidden">
+        <!-- Video Background -->
+        <video autoplay muted loop playsinline id="footerVideo">
+            <source src="https://res.cloudinary.com/dvdzr9vtf/video/upload/v1766700952/Untitleddesign1-ezgif.com-resize-video_1_1_hwhuyi.mp4" type="video/mp4">
+        </video>
+        
         <div class="footer-content">
             <div class="social-links">
                 <a href="#">📘</a>
