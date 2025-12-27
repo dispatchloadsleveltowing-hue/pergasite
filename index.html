@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PERGA - Premium beverages that refresh your life. Discover our collection of beer and sodas.">
     <title>PERGA - Open the Moment</title>
     <style>
         * {
@@ -55,7 +56,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: translate;
+            background: rgba(0, 0, 0, 0.0);
             z-index: 2;
             pointer-events: none;
         }
@@ -212,54 +213,54 @@
         
         /* Navigation */
         nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 2rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent)
-    transition: all 0.4s ease;
-}
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.0), transparent);
+            transition: all 0.4s ease;
+        }
 
-nav.scrolled {
-    padding: 1rem 4rem;
-    background: rgba(0, 0, 0, 0.0);  /* Solid dark background when scrolled */
-}
+        nav.scrolled {
+            padding: 1rem 4rem;
+            background: rgba(0, 0, 0, 0.95);
+        }
 
-.nav-logo {
-    height: 260px;
-    width: auto;
-    display: block;
-    transition: all 0.4s ease;
-}
+        .nav-logo {
+            height: 360px;
+            width: auto;
+            display: block;
+            transition: all 0.4s ease;
+        }
 
-nav.scrolled .nav-logo {
-    height: 120px;
-}
+        nav.scrolled .nav-logo {
+            height: 80px;
+        }
 
-.nav-links {
-    display: flex;
-    flex-direction: row;  /* Horizontal layout */
-    gap: 3rem;
-    list-style: none;
-    align-items: center;  /* Vertically center the links */
-}
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
 
-.nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.9rem;
-}
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+        }
 
-.nav-links a:hover {
-    color: #D4AF37;
+        .nav-links a:hover {
+            color: #D4AF37;
         }
         
         /* Hero Section */
@@ -368,7 +369,6 @@ nav.scrolled .nav-logo {
             position: relative;
         }
 
-        /* Individual card backgrounds */
         .product-card::before {
             content: '';
             position: absolute;
@@ -376,36 +376,35 @@ nav.scrolled .nav-logo {
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: contain;  /* Changed from 'cover' to 'contain' */
-            background-position: center top;  /* Align with the can position */
-            background-repeat: no-repeat;  /* Don't repeat the image */
+            background-size: contain;
+            background-position: center top;
+            background-repeat: no-repeat;
             opacity: 0.80;
             z-index: 0;
             transition: opacity 0.3s, transform 0.3s;
         }
         
         .product-card:hover::before {
-            opacity: 0.20;  /* More subtle fade */
-            transform: scale(1.0);  /* No scaling, just fade */
+            opacity: 0.20;
+            transform: scale(1.0);
         }
         
         .product-card.beer::before {
-            background-image: url('https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/1000031924.jpg?raw=true');
+            background-image: url('');
         }
         
         .product-card.cola::before {
-            background-image: url('https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/Refreco%20Cola%20en%20Ingles%20Etiqueta.jpg?raw=true');
+            background-image: url('');
         }
         
         .product-card.lemon::before {
-            background-image: url('https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/Refreco%20Limon%20en%20Ingles%20Etiqueta.jpg?raw=true');
+            background-image: url('');
         }
         
         .product-card.orange::before {
-            background-image: url('https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/Refreco%20Naranja%20en%20Ingles%20Etiqueta.jpg?raw=true');
+            background-image: url('');
         }
         
-        /* Keep content above background */
         .product-card > * {
             position: relative;
             z-index: 1;
@@ -414,12 +413,12 @@ nav.scrolled .nav-logo {
         .product-card:hover {
             transform: translateY(-10px);
             border-color: #D4AF37;
-            box-shadow: 0 20px 60px rgba(0, 0.2, 0, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
         }
         
         .product-icon {
-            width: 260px;        /* increased from 120px */
-            height: 260px;       /* increased from 120px */
+            width: 250px;
+            height: 250px;
             object-fit: contain;
             margin: 0 auto 1.5rem;
             display: block;
@@ -437,10 +436,7 @@ nav.scrolled .nav-logo {
             margin-bottom: 1rem;
         }
 
-        /* ============================================
-           ENHANCED CONTACT/WHOLESALE SECTION STYLES
-           ============================================ */
-        
+        /* Contact/Wholesale Section */
         .contact-wholesale-section {
             position: relative;
             min-height: 100vh;
@@ -451,7 +447,6 @@ nav.scrolled .nav-logo {
             overflow: hidden;
         }
 
-        /* Animated gradient background */
         .contact-wholesale-section::before {
             content: '';
             position: absolute;
@@ -476,7 +471,6 @@ nav.scrolled .nav-logo {
             100% { background-position: 0% 50%; }
         }
 
-        /* Floating bubbles/drops effect */
         .contact-bubble {
             position: absolute;
             background: rgba(255, 255, 255, 0.15);
@@ -506,7 +500,6 @@ nav.scrolled .nav-logo {
         .contact-bubble:nth-child(5) { left: 80%; width: 70px; height: 70px; animation-delay: 3s; animation-duration: 11s; }
         .contact-bubble:nth-child(6) { left: 90%; width: 45px; height: 45px; animation-delay: 5s; animation-duration: 7s; }
 
-        /* Content container */
         .contact-content-wrapper {
             position: relative;
             z-index: 10;
@@ -518,7 +511,6 @@ nav.scrolled .nav-logo {
             align-items: center;
         }
 
-        /* Left side - Info */
         .contact-info-section {
             background: rgba(255, 255, 255, 0.95);
             padding: 50px;
@@ -533,9 +525,9 @@ nav.scrolled .nav-logo {
             margin-bottom: 20px;
         }
 
-        .contact-logo-crown svg {
+        .contact-logo-crown img {
             width: 100%;
-            height: 100%;
+            height: auto;
         }
 
         .contact-info-section h1 {
@@ -562,27 +554,6 @@ nav.scrolled .nav-logo {
             margin-bottom: 30px;
         }
 
-        .contact-products-preview {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .contact-product-badge {
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            color: white;
-            font-size: 0.9em;
-        }
-
-        .contact-product-badge.beer { background: #2D8B4E; }
-        .contact-product-badge.cola { background: #C41E3A; }
-        .contact-product-badge.limon { background: linear-gradient(135deg, #4FC3F7, #4CAF50); }
-        .contact-product-badge.naranja { background: linear-gradient(135deg, #4CAF50, #FF9800); }
-
-        /* Right side - Contact Form */
         .contact-form-section {
             background: rgba(255, 255, 255, 0.95);
             padding: 50px;
@@ -677,7 +648,7 @@ nav.scrolled .nav-logo {
         
         /* Footer */
         footer {
-            background: #000;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.0), transparent);
             padding: 4rem;
             text-align: center;
             border-top: 1px solid #333;
@@ -685,7 +656,6 @@ nav.scrolled .nav-logo {
             overflow: hidden;
         }
         
-        /* Footer Video Background */
         footer #footerVideo {
             position: absolute;
             top: 50%;
@@ -697,7 +667,8 @@ nav.scrolled .nav-logo {
             transform: translate(-50%, -50%);
             object-fit: cover;
             z-index: 0;
-            opacity: 0.90;
+            opacity: 1.0;
+            filter: none;
         }
         
         .footer-content {
@@ -705,6 +676,13 @@ nav.scrolled .nav-logo {
             margin: 0 auto;
             position: relative;
             z-index: 1;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
         .social-links a {
@@ -734,11 +712,6 @@ nav.scrolled .nav-logo {
         .social-links a:hover img {
             transform: scale(1.1);
         }
-
-        .social-links svg {
-            width: 40px;
-            height: 40px;;
-        }
         
         .legal {
             opacity: 0.6;
@@ -760,7 +733,6 @@ nav.scrolled .nav-logo {
         
         /* Responsive */
         @media (max-width: 968px) {
-            /* Contact Section Mobile */
             .contact-content-wrapper {
                 grid-template-columns: 1fr;
             }
@@ -774,7 +746,6 @@ nav.scrolled .nav-logo {
                 padding: 30px;
             }
 
-            /* Age Gate Mobile */
             #ageGate {
                 padding: 2rem 0;
             }
@@ -828,7 +799,6 @@ nav.scrolled .nav-logo {
                 width: 100%;
             }
             
-            /* Hero Mobile */
             .hero h1 {
                 font-size: 2.5rem;
                 line-height: 1.2;
@@ -849,15 +819,18 @@ nav.scrolled .nav-logo {
                 margin-right: auto;
             }
             
-            /* Navigation Mobile */
             nav {
                 padding: 1rem 1.5rem;
                 flex-direction: column;
-                gap: 5rem;
+                gap: 1rem;
             }
-            
-            .logo {
-                font-size: 1.8rem;
+
+            .nav-logo {
+                height: 100px;
+            }
+
+            nav.scrolled .nav-logo {
+                height: 60px;
             }
             
             .nav-links {
@@ -870,7 +843,6 @@ nav.scrolled .nav-logo {
                 font-size: 0.85rem;
             }
             
-            /* Products Mobile */
             .products-section {
                 padding: 4rem 1.5rem;
             }
@@ -890,15 +862,14 @@ nav.scrolled .nav-logo {
             }
             
             .product-icon {
-                width: 100px;
-                height: 100px;
+                width: 150px;
+                height: 150px;
             }
             
             .product-card h3 {
                 font-size: 1.5rem;
             }
             
-            /* About Section Mobile */
             .hero[id="about"] {
                 padding: 4rem 1.5rem !important;
             }
@@ -908,7 +879,6 @@ nav.scrolled .nav-logo {
                 padding: 0 1rem;
             }
             
-            /* Footer Mobile */
             footer {
                 padding: 3rem 1.5rem;
             }
@@ -922,7 +892,6 @@ nav.scrolled .nav-logo {
             }
         }
         
-        /* Extra Small Devices */
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
@@ -946,35 +915,32 @@ nav.scrolled .nav-logo {
 
     <!-- Age Verification Gate with Video Background -->
     <div id="ageGate">
-        <!-- Video Background -->
         <video autoplay muted loop playsinline id="bgVideo">
             <source src="https://res.cloudinary.com/dvdzr9vtf/video/upload/v1766700952/Untitleddesign1-ezgif.com-resize-video_1_1_hwhuyi.mp4" type="video/mp4">
         </video>
         
         <div class="age-gate-content">
             <div class="age-gate-logo">
-                <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/perga-logo.jpeg.png?raw=true" alt="PERGA">
+                <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/perga-logo.jpeg.png?raw=true" alt="PERGA Logo">
             </div>
             <h2>Please confirm your age</h2>
             <p>You must be of legal drinking age 21 or older to enter this site.</p>
 
-            <!-- DOB inputs -->
             <div class="dob-row">
                 <div class="dob-field">
-                    <input id="mm" type="text" inputmode="numeric" maxlength="2" placeholder="MM">
+                    <input id="mm" type="text" inputmode="numeric" maxlength="2" placeholder="MM" aria-label="Month">
                     <label>MONTH</label>
                 </div>
                 <div class="dob-field">
-                    <input id="dd" type="text" inputmode="numeric" maxlength="2" placeholder="DD">
+                    <input id="dd" type="text" inputmode="numeric" maxlength="2" placeholder="DD" aria-label="Day">
                     <label>DAY</label>
                 </div>
                 <div class="dob-field">
-                    <input id="yyyy" type="text" inputmode="numeric" maxlength="4" placeholder="YYYY">
+                    <input id="yyyy" type="text" inputmode="numeric" maxlength="4" placeholder="YYYY" aria-label="Year">
                     <label>YEAR</label>
                 </div>
             </div>
 
-            <!-- Terms checkbox -->
             <div class="age-terms">
                 <label>
                     <input type="checkbox" id="ageAgree">
@@ -986,10 +952,8 @@ nav.scrolled .nav-logo {
                 </label>
             </div>
 
-            <!-- Submit button -->
             <button class="age-btn" id="enterBtn">ENTER PERGA USA</button>
 
-            <!-- Error message -->
             <p id="ageError">Please enter a valid date of birth and agree to the terms.</p>
         </div>
     </div>
@@ -1034,24 +998,24 @@ nav.scrolled .nav-logo {
                     <p><strong>Best served ice cold</strong></p>
                 </div>
                 
-                <div class="product-card">
+                <div class="product-card cola">
                     <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Cola%20001.ico" alt="PERGA Cola" class="product-icon">
                     <h3>PERGA Cola</h3>
                     <p>Latin-style cola. Bold flavor, smooth bubbles, and refreshing taste.</p>
                     <p><strong>Perfect for everyday enjoyment.</strong></p>
                 </div>
                 
-                <div class="product-card">
+                <div class="product-card lemon">
                     <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Limon%20001.ico" alt="PERGA Lemon" class="product-icon">
                     <h3>PERGA Lemon</h3>
                     <p>crisp refreshing soda with bright citrus flavor. Unforgettable taste.</p>
                     <p><strong>Smooth Carbonation</strong></p>
                 </div>
                 
-                <div class="product-card"> 
+                <div class="product-card orange"> 
                     <img src="https://raw.githubusercontent.com/dispatchloadsleveltowing-hue/pergasite/refs/heads/main/img/Naranja%20001.ico" alt="PERGA Orange" class="product-icon">
                     <h3>PERGA Orango</h3>
-                    <p>Bring vibrant orangr flavor with a crisp.</p>
+                    <p>Bring vibrant orange flavor with a crisp.</p>
                     <p><strong>Refreshing bubbles every sip</strong></p>
                 </div>
                 
@@ -1063,9 +1027,7 @@ nav.scrolled .nav-logo {
             <div class="hero-content">
                 <h2 class="section-title">The PERGA Story</h2>
                 <p style="max-width: 800px; margin: 0 auto;">
-                    Dear exporter and importer, Perga presents great opportunities for those of us dedicated to foreign trade, with new trade agreements and negotiations. With our preparation, knowledge, and experience, we generate innovative strategies in the sector for the benefit of businesses.
-Dr. Victor Manuel Carmenates Romero
-Director of the importing and exporting company VMC Imporsur LLC  Founder and CEO of the Perga VMC brand
+                    Dear exporter and importer, Perga presents great opportunities for those of us dedicated to foreign trade, with new trade agreements and negotiations. With our preparation, knowledge, and experience, we generate innovative strategies in the sector for the benefit of businesses. Dr. Victor Manuel Carmenates Romero - Director of the importing and exporting company VMC Imporsur LLC, Founder and CEO of the Perga VMC brand.
                 </p>
             </div>
         </section>
@@ -1084,12 +1046,11 @@ Director of the importing and exporting company VMC Imporsur LLC  Founder and CE
                 <!-- Left Side - Info -->
                 <div class="contact-info-section">
                     <div class="contact-logo-crown">
-                        <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/perga-logo.jpeg.png?raw=true" alt="PERGA" style="width: 60px; height: auto; display: block;">
+                        <img id="contactLogo" src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/sodalogo.png?raw=true" alt="PERGA" style="width: 60px; height: auto; display: block;">
                     </div>
                     <p class="contact-tagline">Te refresca la vida</p>
                     
                     <p>Premium beverages that bring refreshment to life. From our signature beer to our vibrant sodas, PERGA offers quality drinks for every moment.</p>
-                    
                     
                     <p><strong>Interested in wholesale opportunities?</strong> Partner with PERGA and bring premium refreshment to your customers. We offer competitive pricing, reliable distribution, and quality products your customers will love.</p>
                 </div>
@@ -1161,27 +1122,24 @@ Director of the importing and exporting company VMC Imporsur LLC  Founder and CE
 
     <!-- Footer -->
     <footer id="mainFooter" class="hidden">
-        <!-- Video Background -->
         <video autoplay muted loop playsinline id="footerVideo">
             <source src="https://res.cloudinary.com/dvdzr9vtf/video/upload/v1766700952/Untitleddesign1-ezgif.com-resize-video_1_1_hwhuyi.mp4" type="video/mp4">
         </video>
         
         <div class="footer-content">
-            <div class="social-links">
-                </a>
-                <a href="https://www.facebook.com/pergaVMC/" aria-label="facebook">
-                    <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/Facebook_Logo_2023.png?raw=true" alt="facebook">
-                    </svg>
-                 </svg>
+            <div class="social-links" id="socialLinks">
+                <a href="https://www.facebook.com/pergaVMC/" aria-label="Facebook">
+                    <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/Facebook_Logo_2023.png?raw=true" alt="Facebook">
                 </a>
                 <a href="https://www.instagram.com/perga.vmc/" target="_blank" aria-label="Instagram">
                     <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/Instagram_icon.png?raw=true" alt="Instagram">
                 </a>
-                <a href="https://www.tiktok.com/@pergaofficial" target="_blank" aria-label="tiktok">
-                    <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/tiktok-logo-tiktok-social-media-icon-free-png.png?raw=true" alt="tiktok">
+                <a href="https://www.tiktok.com/@pergaofficial" target="_blank" aria-label="TikTok">
+                    <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/tiktok-logo-tiktok-social-media-icon-free-png.png?raw=true" alt="TikTok">
+                </a>
             </div>
             <div class="age-gate-logo">
-                <img src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/perga-logo.jpeg.png?raw=true" alt="PERGA">
+                <img id="footerLogo" src="https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/perga-logo.jpeg.png?raw=true" alt="PERGA">
             </div>
             <p style="font-size: 0.90rem; opacity: 0.90; margin-bottom: 1rem;">Refresh Responsibly</p>
             <div class="legal">
@@ -1192,135 +1150,156 @@ Director of the importing and exporting company VMC Imporsur LLC  Founder and CE
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
+        // Logo URLs
+        const beerLogo = 'https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/perga-logo.jpeg.png?raw=true';
+        const sodaLogo = 'https://github.com/dispatchloadsleveltowing-hue/pergasite/blob/main/img/sodalogo.png?raw=true';
+
         // Calculate age from DOB
-        // Calculate age from DOB
-    function getAgeFromDob(month, day, year) {
-        const dob = new Date(year, month - 1, day);
-        if (isNaN(dob.getTime())) return null;
+        function getAgeFromDob(month, day, year) {
+            const dob = new Date(year, month - 1, day);
+            if (isNaN(dob.getTime())) return null;
 
-        const today = new Date();
-        let age = today.getFullYear() - dob.getFullYear();
-        const m = today.getMonth() - dob.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
-            age--;
-        }
-        return age;
-    }
-
-    function applyAccess(isOfAge) {
-        document.getElementById('ageGate').classList.add('hidden');
-        document.getElementById('mainNav').classList.remove('hidden');
-        document.getElementById('mainContent').classList.remove('hidden');
-        document.getElementById('mainFooter').classList.remove('hidden');
-
-        if (isOfAge) {
-            document.getElementById('beerProduct').style.display = 'block';
-            document.getElementById('productsTitle').textContent = 'Our Full Collection';
-            sessionStorage.setItem('ageVerified', 'true');
-        } else {
-            document.getElementById('beerProduct').style.display = 'none';
-            document.getElementById('productsTitle').textContent = 'Our Soda Collection';
-            sessionStorage.setItem('ageVerified', 'sodaOnly');
-        }
-    }
-
-    // Button handler
-    document.getElementById('enterBtn').addEventListener('click', function () {
-        const month = parseInt(document.getElementById('mm').value, 10);
-        const day = parseInt(document.getElementById('dd').value, 10);
-        const year = parseInt(document.getElementById('yyyy').value, 10);
-        const agree = document.getElementById('ageAgree').checked;
-        const errorEl = document.getElementById('ageError');
-
-        const age = getAgeFromDob(month, day, year);
-
-        if (!agree || age === null || age < 0 || age > 120) {
-            errorEl.textContent = 'Please enter a valid date of birth and agree to the terms.';
-            errorEl.style.display = 'block';
-            return;
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const m = today.getMonth() - dob.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            return age;
         }
 
-        errorEl.style.display = 'none';
-
-        if (age >= 21) {
-            applyAccess(true);
-        } else {
-            applyAccess(false);
+        function applyAccess(isOfAge) {
+            document.getElementById('ageGate').classList.add('hidden');
+            document.getElementById('mainNav').classList.remove('hidden');
+            document.getElementById('mainContent').classList.remove('hidden');
+            document.getElementById('mainFooter').classList.remove('hidden');
+            
+            const navLogo = document.querySelector('.nav-logo');
+            const contactLogo = document.getElementById('contactLogo');
+            const footerLogo = document.getElementById('footerLogo');
+            const socialLinks = document.getElementById('socialLinks');
+            
+            if (isOfAge) {
+                document.getElementById('beerProduct').style.display = 'block';
+                document.getElementById('productsTitle').textContent = 'Our Full Collection';
+                
+                if (navLogo) navLogo.src = beerLogo;
+                if (contactLogo) contactLogo.src = beerLogo;
+                if (footerLogo) footerLogo.src = beerLogo;
+                
+                if (socialLinks) socialLinks.style.display = 'flex';
+                
+                sessionStorage.setItem('ageVerified', 'true');
+            } else {
+                document.getElementById('beerProduct').style.display = 'none';
+                document.getElementById('productsTitle').textContent = 'Our Soda Collection';
+                
+                if (navLogo) navLogo.src = sodaLogo;
+                if (contactLogo) contactLogo.src = sodaLogo;
+                if (footerLogo) footerLogo.src = sodaLogo;
+                
+                if (socialLinks) socialLinks.style.display = 'none';
+                
+                sessionStorage.setItem('ageVerified', 'sodaOnly');
+            }
         }
-    });
 
-    // Auto-advance for DOB fields
-    document.getElementById('mm').addEventListener('input', function(e) {
-        if (this.value.length === 2) {
-            document.getElementById('dd').focus();
-        }
-    });
+        // Button handler
+        document.getElementById('enterBtn').addEventListener('click', function () {
+            const month = parseInt(document.getElementById('mm').value, 10);
+            const day = parseInt(document.getElementById('dd').value, 10);
+            const year = parseInt(document.getElementById('yyyy').value, 10);
+            const agree = document.getElementById('ageAgree').checked;
+            const errorEl = document.getElementById('ageError');
 
-    document.getElementById('dd').addEventListener('input', function(e) {
-        if (this.value.length === 2) {
-            document.getElementById('yyyy').focus();
-        }
-    });
+            const age = getAgeFromDob(month, day, year);
 
-    // Allow backspace to go back to previous field
-    document.getElementById('dd').addEventListener('keydown', function(e) {
-        if (e.key === 'Backspace' && this.value.length === 0) {
-            document.getElementById('mm').focus();
-        }
-    });
+            if (!agree || age === null || age < 0 || age > 120) {
+                errorEl.textContent = 'Please enter a valid date of birth and agree to the terms.';
+                errorEl.style.display = 'block';
+                return;
+            }
 
-    document.getElementById('yyyy').addEventListener('keydown', function(e) {
-        if (e.key === 'Backspace' && this.value.length === 0) {
-            document.getElementById('dd').focus();
-        }
-    });
+            errorEl.style.display = 'none';
 
-    // Only allow numbers in DOB fields
-    ['mm', 'dd', 'yyyy'].forEach(function(id) {
-        document.getElementById(id).addEventListener('input', function(e) {
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
-    });
-
-    // Check if already verified this session
-    window.onload = function() {
-        const verified = sessionStorage.getItem('ageVerified');
-        if (verified === 'true') {
-            applyAccess(true);
-        } else if (verified === 'sodaOnly') {
-            applyAccess(false);
-        }
-    };
-
-    // Logo shrink on scroll
-    window.addEventListener('scroll', function() {
-        const nav = document.getElementById('mainNav');
-        
-        if (window.scrollY > 100) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+            if (age >= 21) {
+                applyAccess(true);
+            } else {
+                applyAccess(false);
             }
         });
-    });
 
-    // Contact form handler
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your interest in PERGA! We will get back to you shortly.');
-        this.reset();
+        // Auto-advance for DOB fields
+        document.getElementById('mm').addEventListener('input', function(e) {
+            if (this.value.length === 2) {
+                document.getElementById('dd').focus();
+            }
+        });
+
+        document.getElementById('dd').addEventListener('input', function(e) {
+            if (this.value.length === 2) {
+                document.getElementById('yyyy').focus();
+            }
+        });
+
+        // Allow backspace to go back to previous field
+        document.getElementById('dd').addEventListener('keydown', function(e) {
+            if (e.key === 'Backspace' && this.value.length === 0) {
+                document.getElementById('mm').focus();
+            }
+        });
+
+        document.getElementById('yyyy').addEventListener('keydown', function(e) {
+            if (e.key === 'Backspace' && this.value.length === 0) {
+                document.getElementById('dd').focus();
+            }
+        });
+
+        // Only allow numbers in DOB fields
+        ['mm', 'dd', 'yyyy'].forEach(function(id) {
+            document.getElementById(id).addEventListener('input', function(e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        });
+
+        // Check if already verified this session
+        window.onload = function() {
+            const verified = sessionStorage.getItem('ageVerified');
+            if (verified === 'true') {
+                applyAccess(true);
+            } else if (verified === 'sodaOnly') {
+                applyAccess(false);
+            }
+        };
+
+        // Logo shrink on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('mainNav');
+            
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Contact form handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest in PERGA! We will get back to you shortly.');
+            this.reset();
         });
     </script>
 
